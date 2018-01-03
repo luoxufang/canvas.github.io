@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>Archives: 2017/7 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2017/07/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
@@ -161,222 +161,47 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/21/hello-world/">canvas画时钟，重拾乐趣!</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/21/hello-world/" class="archive-article-date">
-  	<time datetime="2017-12-21T12:05:31.328Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-21</time>
-</a>
-        
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://images2015.cnblogs.com/blog/1065412/201702/1065412-20170224200543882-1211205652.png" alt="image"></p>
-<blockquote>
-<p>先来简单介绍画时钟需要的canvas知识</p>
-</blockquote>
-<ul>
-<li><ol>
-<li>在HTML页面中添加canvas元素，必须定义canvas元素的id属性值以便接下来的调用。</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;canvas id=&quot;canvas&quot; class=&quot;canvas&quot; width=&quot;400&quot; height=&quot;400&quot; border:&gt;&lt;/canvas&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><ol>
-<li>使用id寻找canvas元素，在js代码中使用document.getElementById()等方法获取id。</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span><br></pre></td></tr></table></figure>
-<ul>
-<li><ol>
-<li>通过canvas元素的getContext方法来获取其上下文（Context）,即创建Context对象，以获取允许绘画的2D环境。</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br></pre></td></tr></table></figure>
-<ul>
-<li><ol>
-<li>先来认识一下canvas的绘制方法。</li>
-</ol>
-</li>
-</ul>
-<p>1.绘制矩形的两种方法：fillRect 和 strokeRect</p>
-<p>前者用于绘制用颜色填充（fill）区域的矩形，后者用于绘制轮廊（stroke）或线条。图形指定颜色用到了两个属性，即fillStyle 和 strokeStyle，前者用于指定要绘制的填充区域的颜色，后者用于指定要绘制的线条颜色</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">//绘制填充颜色矩形，默认黑色</span></span><br><span class="line">ctx.fillStyle=<span class="string">"red"</span>;</span><br><span class="line">ctx.fillRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//绘制有颜色线条</span></span><br><span class="line">ctx.strokeStyle=<span class="string">"blue"</span>;</span><br><span class="line">ctx.strokeRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">100</span>,<span class="number">50</span>);</span><br></pre></td></tr></table></figure>
-<p>2.绘制圆形<br>绘制圆形是会用到四种方法：beginPath、arc、closePath和fill或stroke。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">//画圆填充红颜色</span></span><br><span class="line"><span class="comment">//绘制园用法：ctx.arc(x,y,radius,startAngle,endAngle,anticlockwise);</span></span><br><span class="line">ctx.beginPath();</span><br><span class="line">ctx.fillStyle=<span class="string">"red"</span>;</span><br><span class="line">ctx.arc(<span class="number">0</span>,<span class="number">0</span>,<span class="number">100</span>,<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI,<span class="literal">true</span>);</span><br><span class="line">ctx.closePath();</span><br><span class="line">ctx.fill();</span><br><span class="line"></span><br><span class="line"><span class="comment">//线条蓝色画圆</span></span><br><span class="line">ctx.beginPath();</span><br><span class="line">ctx.strokeStyle=<span class="string">"blue"</span>;</span><br><span class="line">ctx.lineWidth=<span class="number">10</span>;<span class="comment">//设置线条宽度</span></span><br><span class="line">ctx.arc(<span class="number">0</span>,<span class="number">0</span>,<span class="number">174</span>,<span class="number">0</span>,<span class="built_in">Math</span>.PI*<span class="number">2</span>,<span class="literal">true</span>);</span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
-<p>3.绘制直线<br>用到两个主要方法：moveTo 和 lineTo 以及stroke。</p>
-<p>ctx.moveTo(x,y)——规定线起始点(x,y)。ctx.lineTo(x,y)——规定直线路线的终点。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  ctx.moveTo(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">ctx.lineTo(<span class="number">200</span>,<span class="number">100</span>);</span><br><span class="line">ctx.stroke();<span class="comment">//该方法用于沿该路径绘制线条</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>画canvas时钟过程</p>
-</blockquote>
-<p>首先，定义画布字体的为圆角，让我们看起来美美的：ctx.lineCap=”round”;</p>
-<p>其次，非常重要，时钟是随着时分秒针的转动而转动的，so——我们需要画布范围内必须设计画布不断清除和刷新：ctx.clearRect(0,0,400,400);</p>
-<p>再次，一个画布初始中心点（0,0）是在画布左上角，so——画时钟需要把中心点转移：ctx.translate(200,200);</p>
-<p>最后，也是最重要的，每多一个save()保存就必须在下面补上一个还原restore();</p>
-<p>(1). 画分刻线<br>    画线嘛，上面咱们已经讲过画线的步骤，就不多说啦！只需要注意用到rotate()方法时，先用ctx.moveTo(),ctx.lineTo在画布右侧画出第一根分刻线，再定义需要旋转的角度变量——rotateD,经过ctx.rotate(rotateD)方法来for循环以及画布不断清除刷新的状态，即可画出分刻线。</p>
-<p>(2). 当然这里还需要注意一点：画布需要用到另个方法来包含要执行的内容，分别是save()、restore()。save() 方法把当前状态的一份拷贝压入到一个保存图像状态的栈中。这就允许你临时地改变图像状态，然后，通过调用 restore() 来恢复以前的值。我打个比喻：我有一只手，戴上手套去完成一些事情，手套摘下来之后，我的手还是我的手。额，有点。。。呵呵</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//画刻度线</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">60</span>; i++) &#123;</span><br><span class="line">          ctx.save();</span><br><span class="line">          ctx.beginPath();</span><br><span class="line">          <span class="keyword">var</span> rotateD = i*<span class="built_in">Math</span>.PI*<span class="number">2</span>/<span class="number">60</span>;</span><br><span class="line">          ctx.rotate(rotateD);</span><br><span class="line">          ctx.lineWidth = <span class="number">4</span>;</span><br><span class="line">          ctx.moveTo(<span class="number">170</span>,<span class="number">0</span>);</span><br><span class="line">          ctx.lineTo(<span class="number">160</span>,<span class="number">0</span>);</span><br><span class="line">          ctx.stroke();</span><br><span class="line">          ctx.restore();</span><br><span class="line">      &#125;;</span><br></pre></td></tr></table></figure>
-<p>(3). 画时刻线</p>
-<pre><code>同理，画时刻线只需要修改线宽以及旋转角度
-</code></pre><p>(4). 画时针</p>
-<pre><code>在前面new一个data变量var date = new Date;，并且定义一个时针随时间变化旋转角度也变化的变量rotateH。
-
-   小时针旋转角度rotateH；
-
-   公式：rotateH = 时针旋转角度 +分针旋转角度/12 - 直角 = data.getHours()/12*2*Math.PI + date.getMinutes()/60/12*Math.PI*2 - Math.PI/2;
-
-   (为什么会减Math.PI/2呢，因为时针的初始值为（-12,0）、（125,0）；针指向正好是在三点中位置，所以需要减掉一个直角才能从十二点开始旋转)。
-</code></pre><p>(5). 画分针</p>
-<pre><code>定义一个分针随时间变化旋转角度也变化的变量rotateM。    
-
-公式：rotateM = 分针旋转角度 + 秒针旋转角度/60 -直角 = date.getMinutes()/60*Math.PI*2 + date.getSeconds()/60/60*Math.PI*2 - Math.PI/2;
-</code></pre><p>(6). 画秒针<br>        定义一个秒针随时间变化旋转角度也变化的变量rotateS</p>
-<pre><code>公式：rotateS = 秒针旋转角度 - 减直角 = date.getSeconds()/60*Math.PI*2 - Math.PI/2;
-</code></pre><p>(7). 时针数字略，大家自个去研究咯！</p>
-<ul>
-<li><a href="http://www.cnblogs.com/beyond-utf-8/p/canvas.html" target="_blank" rel="noopener">相关博客链接</a></li>
-<li><a href="http://www.cnblogs.com/beyond-utf-8/p/canvas.html" target="_blank" rel="noopener">github源码链接</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
+    
       
       
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/21/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ps简单操作笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+        <div class="archives">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/01/ps简单操作笔记/">ps简单操作笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/01/ps简单操作笔记/" class="archive-article-date">
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/07/01/ps简单操作笔记/" class="archive-article-date">
   	<time datetime="2017-07-01T03:57:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-01</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>新建一个600*400的框（例）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + N</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>选中要编辑的图片</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + T</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>拖动图片（按住空格）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">按住 space</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>等比例伸缩图片（保证图片不变形）</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">按住 shift 键</span><br></pre></td></tr></table></figure>
-<ul>
-<li>保存两种方法</li>
-</ul>
-<p>1.范围保存</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + S</span><br></pre></td></tr></table></figure>
-<p>2.高质量保存</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + Shift + Alt + S</span><br></pre></td></tr></table></figure>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/07/01/ps简单操作笔记/">ps简单操作笔记</a>
+    </h1>
+  
 
-      
+        <div class="article-info info-on-right">
+          
+          
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/01/ps简单操作笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -398,9 +223,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
