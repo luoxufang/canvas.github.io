@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://luoxufang.xyz">
-  <title>Archives: 2017/12 | 東旭</title>
+  <title>常用的npm和git命令总结 | 東旭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="擅长各项前端技能，一年以上小程序开发">
+  <meta name="description" content="常用的npm 和 git命令总结 npm常用命令  1234567891011121314151617181920212223242526272829303132333435361.npm init　　初始化当前应用包，生成package.json2.npm install　　根据package.json下载所有依赖包3.npm install packageName --save　　下载某个运行">
 <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿编程,代码,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="東旭">
-<meta property="og:url" content="http://luoxufang.xyz/archives/2017/12/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用的npm和git命令总结">
+<meta property="og:url" content="http://luoxufang.xyz/2017/08/13/常用的npm和git命令总结/index.html">
 <meta property="og:site_name" content="東旭">
-<meta property="og:description" content="擅长各项前端技能，一年以上小程序开发">
+<meta property="og:description" content="常用的npm 和 git命令总结 npm常用命令  1234567891011121314151617181920212223242526272829303132333435361.npm init　　初始化当前应用包，生成package.json2.npm install　　根据package.json下载所有依赖包3.npm install packageName --save　　下载某个运行">
+<meta property="og:updated_time" content="2018-05-12T16:43:46.424Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="東旭">
-<meta name="twitter:description" content="擅长各项前端技能，一年以上小程序开发">
+<meta name="twitter:title" content="常用的npm和git命令总结">
+<meta name="twitter:description" content="常用的npm 和 git命令总结 npm常用命令  1234567891011121314151617181920212223242526272829303132333435361.npm init　　初始化当前应用包，生成package.json2.npm install　　根据package.json下载所有依赖包3.npm install packageName --save　　下载某个运行">
   
     <link rel="alternative" href="/atom.xml" title="東旭" type="application/atom+xml">
   
@@ -161,49 +162,196 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-常用的npm和git命令总结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/21/hello-world/" class="archive-article-date">
-  	<time datetime="2017-12-21T12:05:31.328Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/21/hello-world/">canvas画时钟，重拾乐趣!</a>
+    <h1 class="article-title" itemprop="name">
+      常用的npm和git命令总结
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2017/08/13/常用的npm和git命令总结/" class="archive-article-date">
+  	<time datetime="2017-08-12T16:41:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="常用的npm-和-git命令总结"><a href="#常用的npm-和-git命令总结" class="headerlink" title="常用的npm 和 git命令总结"></a>常用的npm 和 git命令总结</h4><blockquote>
+<p>npm常用命令</p>
+</blockquote>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="selector-class">.npm</span> init　　初始化当前应用包，生成package.json</span><br><span class="line"></span><br><span class="line"><span class="number">2</span><span class="selector-class">.npm</span> install　　根据package.json下载所有依赖包</span><br><span class="line"></span><br><span class="line"><span class="number">3</span><span class="selector-class">.npm</span> install packageName --save　　下载某个运行时依赖包</span><br><span class="line"></span><br><span class="line"><span class="number">4</span><span class="selector-class">.npm</span> install packageName --save-dev　　下载某个开发编译期依赖包</span><br><span class="line"></span><br><span class="line"><span class="number">5</span><span class="selector-class">.npm</span> install packageName --g　　全局下载某个依赖包</span><br><span class="line"></span><br><span class="line"><span class="number">6</span><span class="selector-class">.npm</span> install package@version 　　下载指定版本的某个依赖包</span><br><span class="line"></span><br><span class="line"><span class="number">7</span><span class="selector-class">.npm</span> info packageName　　查看某个包有远程仓库中的相关信息</span><br><span class="line"></span><br><span class="line"><span class="number">8</span><span class="selector-class">.npm</span> rm packageName --save　　移除已下载的运行依赖包</span><br><span class="line"></span><br><span class="line"><span class="number">9</span><span class="selector-class">.npm</span> rm packageName –save-dev　　移除已下载的开发依赖包</span><br><span class="line"></span><br><span class="line"><span class="number">10</span><span class="selector-class">.npm</span> list　　查看安装的所有的包</span><br><span class="line"></span><br><span class="line"><span class="number">11</span><span class="selector-class">.npm</span> help　　查看命令的详细帮助</span><br><span class="line"></span><br><span class="line"><span class="number">12</span><span class="selector-class">.npm</span> install -g cnpm --registry=https:<span class="comment">//registry.npm.taobao.org　　安装淘宝镜像</span></span><br><span class="line"></span><br><span class="line"><span class="number">13</span><span class="selector-class">.npm</span> config set registry=<span class="string">"https://registry.npm.taobao.org"</span>　　将淘宝镜像设置为npm的默认仓库</span><br><span class="line"></span><br><span class="line"><span class="number">14</span><span class="selector-class">.npm</span> run xxx　　执行package.json的scripts中配置的命令</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">15</span>.删除node_modules文件夹</span><br><span class="line">方法一：npm npm install rimraf -g</span><br><span class="line">       rimraf node_modules</span><br><span class="line">       </span><br><span class="line">方法二：rmdir /s/<span class="selector-tag">q</span> your_app_dir</span><br><span class="line"></span><br><span class="line">方法三：rm -f /node_modules</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>git常用命令</p>
+</blockquote>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">1.git<span class="built_in"> config </span>--global user.name <span class="string">"username"</span> 　　配置用户名</span><br><span class="line"></span><br><span class="line">2.git<span class="built_in"> config </span>--global user.email<span class="string">"xx@gmail.com"</span>　　配置邮箱</span><br><span class="line"></span><br><span class="line">3.git init　　初始化生成一个本地仓库</span><br><span class="line"></span><br><span class="line">4.git clone url　　将远程仓库克隆下载到本地</span><br><span class="line"></span><br><span class="line">5.git <span class="builtin-name">add</span> *　　添加到暂存区</span><br><span class="line"></span><br><span class="line">6.git commit –m “message”　　提交到本地仓库(message提交记录提示)</span><br><span class="line"></span><br><span class="line">7.git remote <span class="builtin-name">add</span> origin url　　关联到repository远程仓库</span><br><span class="line"></span><br><span class="line">8.git push origin master　　push到远程（第一次提交的话在push后面加-u）</span><br><span class="line"></span><br><span class="line">9.git pull origin master　　从远程pull更新</span><br><span class="line"></span><br><span class="line">10.git remote <span class="builtin-name">remove</span> origin   取消本地目录下关联的远程库</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>切换项目的GitHub提交人</p>
+</blockquote>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.ls -a     当前目录下所有文件</span><br><span class="line"></span><br><span class="line">2.vim .git<span class="built_in">/config </span>   修改git提交人</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>iOS 隐藏和显示隐藏文件的【终端】命令</p>
+</blockquote>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">显示隐藏文件：</span><br><span class="line">打开『终端』这个程序，输入以下:</span><br><span class="line">defaults <span class="keyword">write</span> com.apple.finder AppleShowAllFiles -<span class="keyword">boolean</span> <span class="keyword">true</span> ; killall Finder</span><br><span class="line"></span><br><span class="line">回车执行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">隐藏隐藏文件：</span><br><span class="line">打开『终端』这个程序，输入以下:</span><br><span class="line">defaults <span class="keyword">write</span> com.apple.finder AppleShowAllFiles <span class="keyword">FALSE</span> ; killall Finder</span><br><span class="line"></span><br><span class="line">回车执行</span><br></pre></td></tr></table></figure>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://luoxufang.xyz/2017/08/13/常用的npm和git命令总结/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/11/07/ccss等分布局方法之一/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ccss等分布局方法之一
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/07/15/Vue搭建cli/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue搭建cli</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+    <section id="comments">
+      <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'true'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+  
+
+  
 
 
           </div>
@@ -226,8 +374,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
